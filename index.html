@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portifólio</title>
+</head>
+
+<body>
+    <div class="background-decor"></div>
+
+    <nav class="navegacao">
+
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <main id="inicio" class="cabecalho">
+        <div class="container-foto">
+            <img src="img/img-1.png" alt="Foto de Evelyn Gomes" class="foto-perfil">
+        </div>
+
+        <h1> Evelyn Gomes </h1>
+        <p class="sub-titulo">Desenvolvedora de Software </p>
+
+        <div class="acoes-curriculo">
+            <a href="cv.pdf.pdf" target="_blank" class="btn-curriculo">Visualizar Currículo</a>
+        </div>
+
+    </main>
+
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+
+                Sou uma desenvolvedora em formação, em processo constante de aprendizado e evolução na área de
+                tecnologia. Estou construindo minha base em desenvolvimento web, com foco em criar soluções simples,
+                funcionais e bem estruturadas.
+
+                Gosto de aprender na prática, transformar ideias em projetos reais e evoluir um pouco todos os dias.
+                Este portfólio representa meu caminho, meus estudos e minha dedicação em crescer como profissional de
+                tecnologia.
+
+                Estou aberta a novas oportunidades, desafios e experiências que contribuam para meu desenvolvimento como
+                desenvolvedora.
+
+            </p>
+        </div>
+
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/img-2.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja da Apple</h3>
+                    <p class="paragrafo- projeto">Projeto Front-end construído com HTML, CSS avançado (Flexbox/Grid) e
+                        JavaScript. Com domínio em animações com transform e design totalmente responsivo</p>
+                </div>
+            </div>
+
+
+            <div class="projetos-card">
+                <img src="./img/img-2.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja da Apple</h3>
+                    <p class="paragrafo- projeto">Projeto Front-end construído com HTML, CSS avançado (Flexbox/Grid) e
+                        JavaScript. Com domínio em animações com transform e design totalmente responsivo.</p>
+                </div>
+            </div>
+
+
+            <div class="projetos-card">
+                <img src="./img/img-2.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja da Apple</h3>
+                    <p class="paragrafo- projeto">Projeto Front-end construído com HTML, CSS avançado (Flexbox/Grid) e
+                        JavaScript. Com domínio em animações com transform e design totalmente responsivo.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/img-2.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja da Apple</h3>
+                    <p class="paragrafo- projeto">Projeto Front-end construído com HTML, CSS avançado (Flexbox/Grid) e
+                        JavaScript. Com domínio em animações com transform e design totalmente responsivo.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="skills">
+            <h2 class="sobre-titulo">Minhas Habilidades</h2>
+            <div class="skills-container">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Lógica de Programação</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">HTML / CSS</span>
+
+                <span class="skill-badge">Suporte Técnico (Service Desk)</span>
+                <span class="skill-badge">Fundamentos ITIL</span>
+                <span class="skill-badge">Redes IP</span>
+            </div>
+
+        </section>
+
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em contato</h2>
+        <form class="formulário-contato" id="formulário" onsubmit="enviarWhats(event)">
+
+            <div class="grupo-form">
+                <input placeholder="Name" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="5" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+
+        </form>
+    </section>
+
+    <script>
+
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5521968870746';
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+
+        }
+    </script>
+
+</body>
+
+</html>

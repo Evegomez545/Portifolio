@@ -1,0 +1,397 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+}
+:root {
+
+    --primaria: #373566;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+
+}
+
+body{
+    background-color: transparent;
+    color: var(--claro);
+    overflow-x: hidden;
+
+}
+
+.navegacao {
+    position: fixed;
+    top: 0;
+    background: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+
+
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+
+
+}
+
+.menu-link::after{
+    content:'';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria),var(--secundaria));
+    transition: width 0.5s ease;
+
+
+}
+
+.menu-link:hover::after{
+    width: 100%;
+
+}
+
+.cabecalho{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.foto-perfil {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(79,70, 229,0.3);
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    z-index: 2;
+    
+}
+
+
+h1 {
+    
+    font-size: 3.5rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin:20px;
+
+}
+
+.sub-titulo {
+    font-size: 1.5rem;
+    color: var(--claro)
+
+
+}
+
+.Sobre {
+    padding: 6rem 2rem;
+
+}
+
+.sobre-titulo {
+   font-size: 3rem;
+   text-align: center;
+   
+
+
+}
+
+.sobre-caixa {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+
+
+}
+
+.sobre-paragrafo {
+    text-align: center;
+    font-size: 1;
+
+}
+
+.projetos {
+    padding: 6rem 2rem;
+
+
+}
+
+.projetos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+
+}
+
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+
+}
+
+.projetos-card {
+background: rgba(255, 255, 255, 0.05);
+border-radius: 16px;
+backdrop-filter: blur(10px);
+border: 2px solid var(--vidro);
+overflow: hidden;
+transition: all 0.5s ease;
+cursor: pointer;
+
+}
+
+.projetos-card:hover {
+    box-shadow: 0 10px 20px rgba(79,70,229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+
+}
+
+.projetos-imagem {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+
+
+}
+
+.info-projetos {
+    margin-bottom: 5px;
+
+
+}
+
+.caixa-textos-projeto {
+    padding: 1.5rem;
+
+
+}
+
+.paragrafo-projeto {
+    color: rgba(226, 232, 240, 0.8);
+    line-height: 1.25rem;
+
+
+}
+
+.skills {
+    padding: 4rem 2rem;
+    background: rgba(15, 23, 42, 0.3); 
+}
+
+.skills-container {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 30px auto 0;
+}
+
+.skill-badge {
+    padding: 0.8rem 1.5rem;
+    background: var(--vidro);
+    border: 1px solid var(--secundaria);
+    border-radius: 50px; 
+    font-weight: 500;
+    color: var(--claro);
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.skill-badge:hover {
+    background: var(--secundaria);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+    color: #fff;
+}
+
+
+.background-decor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: #050a18; 
+    background-image: radial-gradient(circle at center, rgba(30, 41, 59, 0.8) 0%, transparent 70%);
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.background-decor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150vmax; 
+    height: 150vmax;
+    transform: translate(-50%, -50%) rotate(45deg); 
+    background-image: repeating-linear-gradient(
+        transparent,
+        transparent 49px,
+        rgba(255, 255, 255, 0.05) 50px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 49px,
+        rgba(255, 255, 255, 0.05) 50px
+    );
+    pointer-events: none;
+}
+
+.background-decor::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, white 1px, transparent 1px),
+        radial-gradient(circle at 80% 20%, white 1px, transparent 1px),
+        radial-gradient(circle at 40% 70%, white 1.5px, transparent 1.5px),
+        radial-gradient(circle at 70% 80%, white 1px, transparent 1px),
+        radial-gradient(circle at 10% 90%, white 1px, transparent 1px);
+    background-size: 300px 300px; 
+    opacity: 0.4;
+   
+}
+
+.contatos {
+    padding: 2rem 6rem;
+
+
+}
+
+.contatos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+
+
+}
+
+.formulário-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+
+
+}
+
+.campo-form {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--claro);
+    border: 1px solid var(--vidro);
+    outline: none;
+
+}
+
+.campo-form:focus {
+    border-color: var(--secundaria);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+
+
+
+}
+
+.botao-form {
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5 ease;
+
+}
+
+.botao-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+
+
+}
+
+
+.acoes-curriculo {
+    margin-top: 25px;
+    z-index: 10; 
+}
+
+.btn-curriculo {
+    padding: 12px 24px;
+    background-color: transparent;
+    color: var(--claro);
+    border: 2px solid var(--secundaria);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-curriculo:hover {
+    background-color: var(--secundaria);
+    color: white;
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+    transform: translateY(-2px);
+}
