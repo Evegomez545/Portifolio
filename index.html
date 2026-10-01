@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Portifólio</title>
+    <link rel="stylesheet" href="lightbox.css">
 </head>
 
 <body>
@@ -70,7 +71,7 @@
         <div class="projetos-caixa">
 
             <div class="projetos-card">
-                <img src="./img/img-4.jpg" alt="projeto 1" class="projetos-imagem">
+                <img src="./img/img-4.jpg" alt="Didi Pratas" class="projetos-imagem" data-galeria="img/Didi-Pratas/DIDI 2.png|img/Didi-Pratas/DIDI 3- Login.png|img/Didi-Pratas/DIDI 4- Painel Administrativo.png|img/Didi-Pratas/DIDI 5- Novo Produto.png">
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projetos">Sistema de Gestão e Catálogo Online para Joalheria</h3>
                     <p class="paragrafo- projeto">Projeto Back-end - Desenvolvi uma solução personalizada para a Didi
@@ -96,7 +97,7 @@
 
 
             <div class="projetos-card">
-                <img src="./img/img-3.jpg" alt="projeto 1" class="projetos-imagem">
+                <img src="./img/img-3.jpg" alt="Confeitaria Premium" class="projetos-imagem" data-galeria="img/Confeitaria-Premium/Confeitaria-Premium 2.png|img/Confeitaria-Premium/Confeitaria-Premium 3.png">
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projetos">Catálogo de Confeitaria Premium</h3>
                     <p class="paragrafo- projeto">Projeto Front-end de alta fidelidade desenvolvido com HTML5 e CSS3
@@ -123,7 +124,7 @@
 
 
             <div class="projetos-card">
-                <img src="./img/portal-franquias.png" alt="projeto 1" class="projetos-imagem">
+                <img src="./img/portal-franquias.png" alt="Portal de Franquias" class="projetos-imagem" data-galeria="img/Portal-franquias/Portal-franquias 2 Login.png|img/Portal-franquias/Portal-franquias 3.png|img/Portal-franquias/Portal-franquias 4.png|img/Portal-franquias/Portal-franquias 5.png|img/Portal-franquias/Portal-franquias 6.png">
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projetos">Portal de Ativação de Lojas no Ifood e 99food</h3>
                     <p class="paragrafo- projeto">Projeto Back-end.  Desenvolvi uma solução robusta para acompanhamento e 
@@ -231,6 +232,14 @@
         }
     </script>
 
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galeria do projeto" hidden>
+        <button class="lightbox-fechar" aria-label="Fechar">&times;</button>
+        <button class="lightbox-seta lightbox-anterior" aria-label="Imagem anterior">&#10094;</button>
+        <img class="lightbox-img" alt="">
+        <button class="lightbox-seta lightbox-proximo" aria-label="Próxima imagem">&#10095;</button>
+        <span class="lightbox-contador"></span>
+    </div>
+    <script src="lightbox.js"></script>
 </body>
 
 </html>
